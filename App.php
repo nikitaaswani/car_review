@@ -1,17 +1,16 @@
 <?php
+include_once 'Car.php';
+include_once 'Builder.php';
 include_once 'Sedan.php';
 include_once 'Xuv.php';
 
-$sedan = new Sedan();
-$sedan->setColor('red');
-$sedan->setMileage(45);
-$sedan->setBrand('faltu');
-$sedan->getAttributes('Sedan');
+$sedan=new Sedan();
+$builder=new Builder($sedan);
+$builder->yo('red',40,'thullu','Sedan',0);
 
 $xuv = new Xuv();
-$xuv->setColor('blue');
-$xuv->setMileage(35);
-$xuv->setBrand('thullu');
+$builder=new Builder($xuv);
+$builder->yo('blue',30,'yo','XUV',5);
 
-$xuv->getAttributes('XUV',$xuv->setDurability(5));
+
 ?>

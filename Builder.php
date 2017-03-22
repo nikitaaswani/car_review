@@ -1,27 +1,15 @@
 <?php
-Class Builder {
-  private $color;
-  private $mileage;
-  private $brand;
+include_once 'Car.php';
 
-  public function setColor($color) {
-    $this->color= $color;
+class Builder {
+  protected $car;
+  public function __construct(Car $car)
+  {
+    $this->car=$car;
+  }
+  public function yo($color,$mileage,$brand,$name,$durability)
+   {
+    $this->car->get($color,$mileage,$brand,$name,$durability);
   }
 
-  public function setMileage($mileage) {
-    $this->mileage= $mileage;
-  }
-
-  public function setBrand($brand) {
-    $this->brand= $brand;
-  }
-
-  public function getAttributes($name,$durability=0) {
-    echo "<br>".$name."created with the following features:";
-    echo "<br> Color:".$this->color."<br> Mileage:".$this->mileage."<br> Brand:".$this->brand;
-    if($durability!=0)
-    {
-      echo "<br> Durability:".$durability;
-    }
-  }
 }
